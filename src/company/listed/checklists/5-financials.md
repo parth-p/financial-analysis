@@ -1,6 +1,6 @@
 # Financials & Key Drivers — Analyst's Checklist
 
-*Companion to the Business Model (v2), Industry Structure, Moat, and Management checklists. Step 5 of the framework.*
+*Companion to the Business Model, Industry Structure, Return Durability, and Management checklists. Step 5 of the framework.*
 
 > **The one rule for this step:** the financials are a **courtroom, and Steps 1–4 are the hypotheses on trial.** You are not forming a fresh opinion from the numbers up — you are *testing* the claims you already made (the moat, the cash cycle, the accounting character) against the hard evidence of the ledger. Every number you compute should **confirm a prior claim, refute it, or raise a new question.** If it does none of those three, it's data entry, not analysis.
 >
@@ -8,16 +8,31 @@
 >
 > **The cleanest boundary in the framework: Step 5 is operating reality; Step 6 is price. They never mix.** "Earns 30% ROIC" is here. "Trades at 15x, which is cheap" is Step 6. The instant a multiple, a "cheap/expensive," or a target price appears, park it `→ Step 6` and stay on the business's economics.
 
-### The flag convention (same as before)
+### The flag convention (same in every step)
 - **Format:** `Fact → Step N`
 - ✅ "ROIC 28% for 8 yrs vs ~9% WACC — feed to terminal assumptions → Step 6"
 - ✅ "Net debt/EBITDA 4.2x with 60% floating — size the solvency risk → Step 7"
 
-**Who owns which judgment:** what you'd *pay* for these economics → **Step 6** · severity/probability of a financial risk breaking the thesis → **Step 7** · the thesis → **Step 8**.
+**Who owns which judgment (same in every step):**
 
-**Incoming flags to resolve here:** Step 1's cash-cycle & unit-economics & growth-quality claims · Step 3's return pattern, moat depth, and durability · Step 4's accounting-character flags, reinvestment ROIC, and buyback timing.
+| Step | Owns |
+|---|---|
+| 1 Business model | Description of the machine — no verdicts |
+| 2 Industry structure | Verdict on the industry (the average player) |
+| 3 Return durability | Moat (structural case) + credibility of guidance (asserted case) |
+| 4 Management & capital allocation | Operators, allocators, incentives, character, governance |
+| 5 Financials & key drivers | Operating reality in the numbers: earnings quality, ROIC vs. cost of capital, solvency, key drivers, bottom-up forecast, forensic checks |
+| 6 Valuation | What's priced in; value range; margin of safety |
+| 7 Risks | Ranking by probability × permanence; kill criteria (thesis-broken exit) |
+| 8 Thesis, catalyst & horizon | Variant thesis, edge, catalyst, horizon, both exits, position size — or pass |
 
-**How to use this:** cash over earnings; trend over snapshot; drivers over line-items. Read the three statements together and across time. Output is a three-part verdict (confirm/contradict · key drivers · earnings quality) plus parked flags.
+Step 5 keeps operating reality — never price.
+
+**Incoming flags to resolve here:** Step 1's cash-cycle & unit-economics & growth-quality claims · Step 3's return pattern, moat depth, and durability; management's guidance (the cross-check for your forecast, §8) and chosen metrics (3-B5, to quantify in §2) · Step 4's accounting-character flags and reinvestment ROIC.
+
+**How to use this:** cash over earnings; trend over snapshot; drivers over line-items. Read the three statements together and across time. Output is a three-part verdict (confirm/contradict · key drivers · earnings quality) plus parked flags. Where the data isn't available (short history, missing segment or peer data, no maintenance/growth capex split), record it as an open finding rather than estimating to fill the gap. A ratio you couldn't compute is a result, not a blank.
+
+**Lenders & insurers:** ROIC, FCF, the cash cycle, and net debt/EBITDA don't apply. Substitute the native metrics — NIM, asset quality (GNPA/NNPA), credit cost, capital adequacy, ALM, ROA/ROE; for insurers, combined ratio and float — and ask each section's *question* of those.
 
 ---
 
@@ -35,13 +50,14 @@ Earnings are an opinion; cash is closer to a fact.
 - [ ] **Free cash flow** = OCF − capex. Get the conversion ratio (FCF/NI or OCF/NI).
 - [ ] Accruals level — the gap between accrual earnings and cash. High accruals = lower quality.
 
-**Resolves:** Step 4's accounting-character flags (quantify what adjusted metrics strip out) and Step 1's cash-cycle claim.
+**Resolves:** Step 3's metric catalogue (3-B5) and Step 4's accounting-character flags (quantify what adjusted metrics strip out), and Step 1's cash-cycle claim.
 
 ---
 
 ## 3. Returns on capital — *the moat's fingerprint* (test Step 3)
 Where the moat lives or dies in the numbers.
 - [ ] **ROIC vs. WACC**, over many years. Persistent ROIC > WACC = value creation; its *stability* is moat evidence.
+- [ ] **State the cost of capital you're using, and why.** Step 6 discounts at the same rate, so the spread here and the value there stay consistent.
 - [ ] **DuPont decomposition of ROE:** margin × asset turnover × leverage. *Why* returns are high matters — margin-driven (possible moat) ≠ leverage-driven (fragility).
 - [ ] **Incremental ROIC** — return on the *new* capital deployed. (Tests Step 3's reinvestment runway and Step 4's allocation skill against reality.)
 
@@ -76,7 +92,7 @@ Where the moat lives or dies in the numbers.
 - [ ] **Cash conversion cycle** = receivable days + inventory days − payable days. Compute it.
 - [ ] **The trend in each** matters more than the level: rising receivables (customers not paying / channel stuffing), building inventory (softening demand).
 
-**Resolves:** Step 1's negative-working-capital gem or working-capital-trap flag.
+**Resolves:** Step 1's cash-cycle and negative-working-capital notes.
 
 ---
 
@@ -85,19 +101,19 @@ This is what separates modeling from data entry.
 - [ ] **Build the driver tree:** decompose value into operational primitives — retailer = stores × sales/store; SaaS = customers × ARPU × retention; freight = tonnage × yield × load factor.
 - [ ] Identify the **2–3 drivers** that dominate the economics. Go deep on those; skim the rest.
 - [ ] **Sensitivity:** which driver, when it moves, swings the outcome most? That's the swing factor.
+- [ ] **Bottom-up forecast:** project the 2–3 drivers forward into a rough earnings forecast (a range, not a point). Then compare it with management's guidance (Step 3) — where they differ, say why. *Your numbers first; guidance is the cross-check, never the anchor.*
 
 **These are the numbers the whole thesis rests on — and the ones Step 6's reverse DCF will ask the price to justify.** Flag them `→ Step 6`.
 
 ---
 
 ## 9. Forensic red flags — *the accounting-quality deep dive*
-Hunt the divergence signals (resolves Step 4's governance/character flags):
-- [ ] NI rising while cash flow stalls.
-- [ ] Revenue rising while receivables rise *faster*; rising DSO.
+Hunt the divergence signals not already tested above (resolves Step 4's governance/character flags). Earnings vs. cash is §2; receivables/DSO and inventory build are §7; auditor changes are Step 4's.
 - [ ] "One-time" charges that recur; frequent restructuring.
 - [ ] Widening gap between GAAP and adjusted metrics.
-- [ ] Capitalized costs that should be expensed; changed estimates/policies; auditor changes.
+- [ ] Capitalized costs that should be expensed; changed estimates/policies.
 - [ ] Related-party revenue.
+- [ ] **Cash that may not be real:** a large cash balance alongside significant debt, or interest income too low for the cash reported.
 - [ ] Screens as tripwires: Altman Z (distress), Beneish M (manipulation).
 
 ---
@@ -126,7 +142,7 @@ If you can't fill part 1, you treated this step as data collection, not a trial.
 ## Handoff to the rest of the framework
 Step 5 produces a three-part verdict + parked flags. Everything tagged `→ Step N` collects here, grouped by owner:
 
-- **→ Step 6 (valuation):** the 2–3 key drivers and their current levels (the reverse DCF will test what the price implies about them); the ROIC-vs-WACC spread and its durability (feeds terminal assumptions); normalized/through-cycle earnings power.
+- **→ Step 6 (valuation):** the 2–3 key drivers and their current levels (the reverse DCF will test what the price implies about them); your bottom-up forecast range; the cost of capital used; the ROIC-vs-WACC spread and its durability (feeds terminal assumptions); normalized/through-cycle earnings power.
 - **→ Step 7 (risks):** solvency/refinancing risk sized; earnings-quality or forensic red flags probability-weighted; driver fragility (which swing factor, if it breaks, breaks the thesis).
 - **→ Step 8 (thesis):** where the numbers diverged from the story — that gap is often the raw material of a variant perception. State it.
 

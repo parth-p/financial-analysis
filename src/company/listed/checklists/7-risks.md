@@ -1,6 +1,6 @@
 # Risks — Analyst's Checklist
 
-*Companion to the Business Model (v2), Industry Structure, Moat, Management, Financials, and Valuation checklists. Step 7 of the framework.*
+*Companion to the Business Model, Industry Structure, Return Durability, Management, Financials, and Valuation checklists. Step 7 of the framework.*
 
 > **The one rule for this step:** **risk is the probability of permanent loss of capital — a nameable way the business or your reasoning is wrong — not volatility.** Price wobble on a business you've valued correctly isn't risk; it's your entry point. Real risk is narrower: impairment you don't recover from.
 >
@@ -8,13 +8,26 @@
 >
 > **Two kinds of risk — only one is yours.** Risk to the *business* vs. risk to *your thesis*. A business risk already priced in (**Step 6**) is not a risk to your *return* — the market discounted it. Your risk is the **delta between what you believe and what's priced.** (This is why Step 7 needs Step 6: the same risk is irrelevant at one price and fatal at another.)
 
-### The flag convention (same as before)
+### The flag convention (same in every step)
 - **Format:** `Fact → Step N`
 - ✅ "Thesis-broken kill trigger: DSO > 120 days for 2 quarters → Step 8 (sell discipline)"
 
-**Who owns which judgment:** the margin of safety that *pays* for these risks → **Step 6** (revisit it) · the thesis, catalyst, time horizon, and thesis-*achieved* exit → **Step 8**.
+**Who owns which judgment (same in every step):**
 
-**Incoming flags to resolve here:** moat-erosion vectors (Step 3) · solvency/refinancing & forensic red flags (Step 5) · governance/integrity/pledging (Step 4) · industry disruption & policy dependence (Step 2) · concentration (Step 1) · the embedded expectations most likely to break (Step 6).
+| Step | Owns |
+|---|---|
+| 1 Business model | Description of the machine — no verdicts |
+| 2 Industry structure | Verdict on the industry (the average player) |
+| 3 Return durability | Moat (structural case) + credibility of guidance (asserted case) |
+| 4 Management & capital allocation | Operators, allocators, incentives, character, governance |
+| 5 Financials & key drivers | Operating reality in the numbers: earnings quality, ROIC vs. cost of capital, solvency, key drivers, bottom-up forecast, forensic checks |
+| 6 Valuation | What's priced in; value range; margin of safety |
+| 7 Risks | Ranking by probability × permanence; kill criteria (thesis-broken exit) |
+| 8 Thesis, catalyst & horizon | Variant thesis, edge, catalyst, horizon, both exits, position size — or pass |
+
+Step 7 keeps the risk ranking and the kill criteria. The margin of safety that *pays* for these risks is Step 6's (revisit it); position size is Step 8's.
+
+**Incoming flags to resolve here:** moat-erosion vectors and guidance credibility/dependence (Step 3 — a guidance cut is a candidate kill trigger) · solvency/refinancing & forensic red flags (Step 5) · governance/integrity/pledging (Step 4) · industry disruption & policy dependence (Step 2) · concentration (Step 1) · the embedded expectations most likely to break (Step 6).
 
 **How to use this:** invert (assume you're wrong), permanent vs. temporary is the master cut, focus on thesis risk. Output is a *ranking* of the 2–3 risks that matter + kill criteria — not a list.
 
@@ -95,7 +108,7 @@ State it as a *ranking*, not a list — the analog of the earlier verdict tests:
 > 2. ______________ — probability [ ], severity [ ], **[permanent / temporary]**.
 > **Pre-mortem — most likely way this fails:** ________________________.
 > **Kill criteria (thesis broken if):** ________________________.
-> **Implication for margin of safety / position size:** ________________________.
+> **Implications:** margin of safety ______________ (→ Step 6, revisit) · sizing ______________ (→ Step 8 decides).
 
 If your output is a long undifferentiated list, or nothing is marked permanent, you did risk theater. Go back to Section 5 and rank.
 
@@ -105,6 +118,6 @@ If your output is a long undifferentiated list, or nothing is marked permanent, 
 Step 7 produces a ranking + kill criteria. Everything tagged `→ Step N` collects here:
 
 - **→ Step 6 (revisit):** risk and margin of safety are the same coin. A fat left tail either widens the discount you demand or shrinks the position — feed the existential risks back into whether the price pays you.
-- **→ Step 8 (thesis, catalyst, horizon):** the kill criteria (thesis-broken exit); the pre-mortem as the honest counter-case the thesis must survive; whether the risks are underwritable within your horizon or disqualifying.
+- **→ Step 8 (thesis, catalyst, horizon):** the kill criteria (thesis-broken exit); the pre-mortem as the honest counter-case the thesis must survive; whether the risks are underwritable within your horizon or disqualifying; the sizing implication of the left tail (Step 8 sets the size).
 
 *Steps 1–6 built and priced the thesis. Step 7 asked how it dies, whether you'd see it coming, and whether the price pays you to take the bet.*

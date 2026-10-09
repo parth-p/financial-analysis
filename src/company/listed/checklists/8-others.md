@@ -10,9 +10,22 @@
 >
 > **This is the terminal step.** Its handoff is not to another step — it's to a **decision** (buy / pass / size) and to the **monitoring loop.**
 
-### The flag convention (now closing the loop)
+### The flag convention (same in every step — here, closing the loop)
 Every prior step's flags land here. Pull them together:
-- Step 6's gap = the raw material of the thesis · Step 7's kill criteria = the thesis-broken exit · Step 3's moat = whether it can let time be its catalyst · Step 5's key drivers = what a catalyst inflects.
+- Step 6's gap = the raw material of the thesis · Step 7's kill criteria = the thesis-broken exit · Step 7's sizing implication = an input to §6 · Step 3's moat = whether it can let time be its catalyst; new capacity/expansion = a candidate dated catalyst · Step 5's key drivers = what a catalyst inflects.
+
+**Who owns which judgment (same in every step):**
+
+| Step | Owns |
+|---|---|
+| 1 Business model | Description of the machine — no verdicts |
+| 2 Industry structure | Verdict on the industry (the average player) |
+| 3 Return durability | Moat (structural case) + credibility of guidance (asserted case) |
+| 4 Management & capital allocation | Operators, allocators, incentives, character, governance |
+| 5 Financials & key drivers | Operating reality in the numbers: earnings quality, ROIC vs. cost of capital, solvency, key drivers, bottom-up forecast, forensic checks |
+| 6 Valuation | What's priced in; value range; margin of safety |
+| 7 Risks | Ranking by probability × permanence; kill criteria (thesis-broken exit) |
+| 8 Thesis, catalyst & horizon | Variant thesis, edge, catalyst, horizon, both exits, position size — or pass |
 
 **How to use this:** thesis not summary; name the edge or pass; variant *and* correct; pre-commit the exits while unanchored; "pass" is a valid and common answer. Output is a one-sentence thesis + edge + catalyst + horizon + exits + size — *or* a clean "pass."
 
@@ -59,12 +72,14 @@ Define both *before* buying, while unanchored:
 ## 6. Position sizing — *conviction, not enthusiasm*
 - [ ] Size = quality of edge × margin of safety (Step 6) ÷ risk & permanence (Step 7).
 - [ ] Size **up** with a nameable edge and wide margin; **down** with uncertainty and fat left tails.
+- [ ] **Liquidity cap:** no larger than you could exit within your set number of days of average traded value — otherwise the kill criteria can't be acted on. *(Usually the binding limit in small caps.)*
 - [ ] Conviction from a named edge + margin is durable; conviction from a good story evaporates in the first drawdown.
 
 ---
 
 ## 7. The pass test — *is there actually an opportunity?* (the honest default)
 - [ ] Could the honest answer be **"pass"** — great business, fair price, no variant perception?
+- [ ] **Passing on price, not on the business?** Record a **buy-below price** (from Step 6's value range and the margin of safety you'd need) and put it on the watchlist.
 - [ ] **Most careful analysis should end here.** Walking away when there's no edge *is* the process working, not a failure of it.
 - [ ] "No opportunity" is legitimate, common, and often the *most* correct conclusion.
 
@@ -100,7 +115,7 @@ State it in one breath — the culmination of all eight verdict tests:
 >
 > **— OR —**
 >
-> **Pass:** ________________________ (no edge / fairly priced / outside my circle of competence).
+> **Pass:** ________________________ (no edge / fairly priced / outside my circle of competence). **If fairly priced — buy below:** ______.
 
 If you can't answer *"what do I believe that the market doesn't, why am I right, what makes them come around, and by when"* — the honest verdict is **pass, buy the index.**
 

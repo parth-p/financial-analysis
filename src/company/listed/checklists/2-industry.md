@@ -1,16 +1,29 @@
 # Industry Structure — Analyst's Checklist
 
-*Companion to the Business Model checklist (v2 format). Step 2 of the framework.*
+*Companion to the Business Model checklist. Step 2 of the framework.*
 
 > **The one rule for this step:** judge the *pond*, not the *fish*. Step 1 forbade all verdicts; Step 2 **allows a verdict — but only about the industry, never about your company.** "This is a structurally attractive industry" is Step 2's job. "This company is better than its rivals" is the moat (Step 3) and must not leak in. **The test for every sentence you write here: is it true of the *average player* in the industry?** If it's about *your* company specifically, you've crossed into Step 3 — flag it and move on. Keep asking: *am I describing the pond, or the fish?*
 
-### The flag convention (same as v2)
+### The flag convention (same in every step)
 When you notice something that matters but isn't Step 2's to judge, write it as a **fact plus the step that owns it**, then move on.
 - **Format:** `Fact → Step N`
 - ✅ "Industry-wide switching costs are low; incumbents win on relationships → Step 3 (does *our* company have those relationships?)"
 - ❌ "Our company's deep OEM relationships lock customers in" (that's the fish — Step 3)
 
-**Who owns which judgment:** company-specific advantage / moat → **Step 3** · management → **Step 4** · financial quality → **Step 5** · the *severity/probability* of a specific risk → **Step 7** · the differentiated thesis → **Step 8**. Step 2 keeps only the verdict on the *industry's* attractiveness.
+**Who owns which judgment (same in every step):**
+
+| Step | Owns |
+|---|---|
+| 1 Business model | Description of the machine — no verdicts |
+| 2 Industry structure | Verdict on the industry (the average player) |
+| 3 Return durability | Moat (structural case) + credibility of guidance (asserted case) |
+| 4 Management & capital allocation | Operators, allocators, incentives, character, governance |
+| 5 Financials | Return/earnings math, ROIC vs. cost of capital, quality of earnings, bottom-up forecast |
+| 6 Valuation | What's priced in; terminal assumptions |
+| 7 Risks | Severity & probability of specific risks; kill-triggers |
+| 8 Thesis & catalysts | The differentiated thesis; dated catalysts |
+
+Step 2 keeps only the verdict on the *industry's* attractiveness.
 
 **How to use this:** Run every section. The output is a defensible one-line verdict on the pond *plus* a stack of `→ Step 3` flags naming what a moat would have to be made of. Where you can't answer, that gap is a finding — record it.
 
@@ -44,6 +57,7 @@ Run each at the **industry level**. The goal isn't five filled boxes — it's fi
 - [ ] **Buyer power:** customers concentrated / price-sensitive / able to squeeze? (Government L1 lowest-bidder tendering is buyer power in its most brutal form.)
 - [ ] **Supplier power:** key inputs concentrated or critical enough that suppliers capture the margin?
 - [ ] **Name the binding force:** which single one is doing the most to cap returns here?
+- [ ] **Check the verdict against the numbers:** what has the average player actually earned through a full cycle? If the forces say "attractive" but the average player earns below its cost of capital, the forces analysis is wrong — revisit it.
 
 **Boundary:** every force describes the *average* participant. "Buyers can squeeze this industry" is Step 2; "but *our* company resists it via switching costs" → **Step 3**.
 

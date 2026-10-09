@@ -1,6 +1,6 @@
 # Valuation vs. What's Priced In — Analyst's Checklist
 
-*Companion to the Business Model (v2), Industry Structure, Moat, Management, and Financials checklists. Step 6 of the framework.*
+*Companion to the Business Model, Industry Structure, Return Durability, Management, and Financials checklists. Step 6 of the framework.*
 
 > **The one rule for this step:** valuation is the **collision** of your view of reality (Steps 1–5) with the market's price — and it is **meaningless in isolation.** A 40x multiple can be cheap and an 8x expensive; which one depends entirely on the growth, returns, and durability you already established. You *cannot* do this step before Steps 1–5.
 >
@@ -8,14 +8,27 @@
 >
 > **Boundary:** Step 6 establishes the *gap*. It is **not** risk enumeration (**Step 7** — though your margin of safety responds to risk) and **not** timing (whether/when the gap closes is **Step 8**'s catalyst question).
 
-### The flag convention (same as before)
+### The flag convention (same in every step)
 - **Format:** `Fact → Step N`
 - ✅ "Price implies 22% growth for 10 yrs — probability and what breaks it → Step 7"
 - ✅ "Gap is +60% to base case but needs a re-rating trigger → Step 8"
 
-**Who owns which judgment:** what could break the thesis & how likely → **Step 7** · what makes the market come around and by when → **Step 8**.
+**Who owns which judgment (same in every step):**
 
-**Incoming flags to use here:** Step 2's industry ceilings (feasible margins/share) · Step 3's moat *direction* (sets the competitive-advantage period / fade) · Step 4's allocation quality (a dollar reinvested badly isn't worth a dollar) · Step 5's key drivers, ROIC-vs-WACC spread, and normalized earnings power.
+| Step | Owns |
+|---|---|
+| 1 Business model | Description of the machine — no verdicts |
+| 2 Industry structure | Verdict on the industry (the average player) |
+| 3 Return durability | Moat (structural case) + credibility of guidance (asserted case) |
+| 4 Management & capital allocation | Operators, allocators, incentives, character, governance |
+| 5 Financials & key drivers | Operating reality in the numbers: earnings quality, ROIC vs. cost of capital, solvency, key drivers, bottom-up forecast, forensic checks |
+| 6 Valuation | What's priced in; value range; margin of safety |
+| 7 Risks | Ranking by probability × permanence; kill criteria (thesis-broken exit) |
+| 8 Thesis, catalyst & horizon | Variant thesis, edge, catalyst, horizon, both exits, position size — or pass |
+
+Step 6 keeps the gap and the margin-of-safety verdict.
+
+**Incoming flags to use here:** Step 2's cycle position (for normalizing earnings) · Step 3's moat *direction* (sets the competitive-advantage period / fade) and management's guidance (to compare with what's priced in) · Step 4's allocation quality (a dollar reinvested badly isn't worth a dollar) · Step 5's key drivers, bottom-up forecast, cost of capital, ROIC-vs-WACC spread, and normalized earnings power.
 
 **How to use this:** invert (what's priced in), range not point, always relative to your view. Output is the gap stated plainly + a margin-of-safety verdict.
 
@@ -40,14 +53,17 @@ Every method is only as honest as the earnings figure underneath it.
 ## 3. What's priced in — *the reverse DCF* (the anchor)
 - [ ] Back out what today's price implies: what **growth**, what **margin**, what **return on capital**, and for **how long** excess returns persist?
 - [ ] Judge those embedded expectations against Steps 1–5 — conservative, reasonable, or heroic?
+- [ ] **Vs. guidance (Step 3):** does the price assume more or less than management guides? Above guidance, the market is betting on a beat; below it, the market doesn't believe them.
 
-**The question:** what has to go right for this price to make sense, and how likely is that? *(If the price implies a growth/margin no one in the industry — Step 2 — has ever achieved, you've found something.)*
+**The question:** what has to go right for this price to make sense, and how likely is that?
 
 ---
 
 ## 4. Intrinsic value — *DCF as a range, never a point*
 A thinking tool, not a precision instrument.
 - [ ] **Scenarios, not a point:** bear / base / bull, roughly probability-weighted. (A single-point DCF is a lie told to two decimals.)
+- [ ] **Discount at Step 5's cost of capital** — the same rate that judged ROIC vs. WACC.
+- [ ] **Per-share value on the fully diluted share count** — warrants, ESOPs, and convertibles included.
 - [ ] **Terminal value = where the moat feeds in.** It usually dominates; it hinges on the **competitive-advantage period** (how long ROIC > WACC). Step 3's moat *direction* sets the fade — wide/widening earns a long CAP, eroding earns a short one.
 - [ ] **Sensitivity on the Step 5 key drivers** — the value is the point; find the 2–3 assumptions it actually hinges on.
 
@@ -63,7 +79,7 @@ Shorthand for a DCF; useful for triangulation.
 
 ## 6. Triangulate & sanity-check
 - [ ] Do the methods converge on a rough range? When DCF and multiples disagree sharply, find out *why* (different embedded assumptions — informative in itself).
-- [ ] **Reality tests linked to earlier steps:** what market share does the price imply — is it possible? What margin does it require — has *anyone* in this industry (Step 2) achieved it?
+- [ ] **Reality tests:** what market share does the price imply — is it possible? What margin does it require — has *anyone* in this industry achieved it? (If no one ever has, you've found something.)
 - [ ] **Reverse stress test:** at what price would this be *obviously* cheap / *obviously* expensive?
 - [ ] Sum-of-the-parts if multi-segment.
 
