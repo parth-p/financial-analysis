@@ -37,18 +37,14 @@ analysis/
 │   │   │       ├── fetch_rhp.py         # Download RHP/DRHP from SEBI/exchange URLs → tmp/company/ipo/
 │   │   │       └── ipo_client.py        # Chittorgarh API client: list IPOs, fetch details, trigger RHP download
 │   │   │
-│   │   └── listed/          # Listed equity research (8-pillar framework)
-│   │       ├── WORKFLOW.md              # ★ Master orchestrator: step-by-step prompts for Steps 1–6
+│   │   └── listed/          # Listed equity research (4-stage framework)
+│   │       ├── WORKFLOW.md              # ★ Master orchestrator: execution rules, sources & stage prompts
 │   │       ├── peer-finder.md           # Deterministic peer-selection runbook for relative valuation
-│   │       ├── checklists/              # The 8 analytical pillars (execute in order)
-│   │       │   ├── 1-business-model.md      # Step 1: Describe the machine (no judgment)
-│   │       │   ├── 2-industry.md            # Step 2: Judge the pond, not the fish
-│   │       │   ├── 3-moat-guidance.md       # Step 3: Return durability — moat + management guidance
-│   │       │   ├── 4-mgmt-capital-allocation.md  # Step 4: Management competence & capital allocation
-│   │       │   ├── 5-financials.md          # Step 5: Test Steps 1–4 against the ledger
-│   │       │   ├── 6-valuation.md           # Step 6: What's priced in vs. your view
-│   │       │   ├── 7-risks.md               # Step 7: Permanent loss of capital risks & kill criteria
-│   │       │   └── 8-others.md              # Step 8: Differentiated thesis, catalyst & position sizing
+│   │       ├── checklists/              # The 4 analytical stages (execute in order)
+│   │       │   ├── 1-business.md            # Stage 1: Business model, industry arena & moat falsification
+│   │       │   ├── 2-management.md          # Stage 2: Management competence, capital allocation & governance
+│   │       │   ├── 3-financials.md          # Stage 3: Financial forensics & valuation collision (Parts A & B)
+│   │       │   └── 4-thesis.md              # Stage 4: Investment decision, strategic arc & thesis
 │   │       └── scripts/                 # Automation tools for listed research
 │   │           ├── screener_scrape.py       # Scrape Screener.in → screener.md (financials, ratios, doc links)
 │   │           ├── financial_calculator.py  # Ratio tables, DuPont, forensics (Altman Z, Beneish M) from JSON
@@ -128,16 +124,20 @@ All scripts live in `src/` and must be executed via `.venv/bin/python`. Use `--h
 
 ## Workflow Entry Points
 
-### Listed Company Deep-Dive (8-Pillar Framework)
+### Listed Company Deep-Dive (4-Stage Framework)
 
-1. **Start with** `src/company/listed/WORKFLOW.md` — it contains execution rules, step-by-step prompts, prerequisites, and tool integration for Steps 1–6.
-2. Steps 7 (Risks) and 8 (Thesis) follow their checklists directly: `checklists/7-risks.md` and `checklists/8-others.md`.
-3. **Prerequisites by step:**
-   - Steps 1–2: Web search only (no tools needed).
-   - Step 3+: `screener.md` must exist in the company folder. If missing, generate it first via `screener_scrape.py`.
-   - Step 5: Also run `financial_calculator.py` to compute ratio tables and forensic screens.
-   - Step 6: Also run `valuation_calculator.py` for multiples-based valuation and sensitivity analysis.
-4. **Reference material:** `src/common/docs/valuation-guide.md` contains Indian-market-specific DCF parameters (cost of equity 11–14%, terminal growth 4–6%) and a sector → valuation metric cheat sheet. Consult it during Steps 5–6.
+1. **Start with** `src/company/listed/WORKFLOW.md` — master orchestrator containing execution rules, data ingestion commands, and prompts for Stages 1–4.
+2. **Execute Stages sequentially:**
+   - **Stage 1 (Business Model & Moat):** `checklists/1-business.md` -> `1-business-analysis.md`
+   - **Stage 2 (Management & Governance):** `checklists/2-management.md` -> `2-management-analysis.md`
+   - **Stage 3 (Financials & Valuation):** `checklists/3-financials.md` -> `3-financials-analysis.md` (Part A: forensics & cash flow with zero price; Part B: valuation collision, inversion & asymmetry with price).
+   - **Stage 4 (Decision & Thesis):** `checklists/4-thesis.md` -> `4-thesis-analysis.md` (Strategic arc, 2–3 real risks, pre-committed kill triggers, capital sizing).
+3. **Prerequisites & Tooling:**
+   - **Step 0:** Generate `screener.md` in the company folder via `screener_scrape.py <screener_url>`.
+   - **Financials Priority:** Give strict priority to Audited Annual Reports (Notes to Accounts) over portal aggregates.
+   - **Stage 3 Tools:** Use `financial_calculator.py` for forensics/DuPont, `peer-finder.md` for peer selection, and `valuation_calculator.py` for multiples and 3-year inversion.
+   - **Style Invariants:** Plain conversational English, no consulting fluff, and STRICTLY NO LaTeX formatting.
+4. **Reference material:** `src/common/docs/valuation-guide.md` contains Indian-market-specific DCF parameters (cost of equity 11–14%, terminal growth 4–6%) and a sector -> valuation metric cheat sheet. Consult it during Stage 3.
 5. **PDF conversion:** When downloading annual reports, concalls, or investor presentations, convert them to markdown via `src/common/scripts/pdf_to_markdown.py` before reading.
 
 ### IPO Analysis

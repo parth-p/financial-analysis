@@ -19,8 +19,8 @@ source .venv/bin/activate
 
 ## What You Can Do
 
-### Listed Company Deep-Dive (8-Pillar Framework)
-Structured analysis across 8 pillars — business model, industry, moat & guidance, management, financials, valuation, risks, and thesis. Each step has a checklist in `src/company/listed/checklists/` and automation scripts for financial calculations, screener scraping, and announcement fetching. Start with `src/company/listed/WORKFLOW.md`.
+### Listed Company Deep-Dive (4-Stage Framework)
+Structured analysis across 4 stages — Stage 1 (Business Model, Arena & Moat), Stage 2 (Management, Capital Allocation & Governance), Stage 3 (Financial Forensics & Valuation Collision), and Stage 4 (Investment Decision, Strategic Arc & Thesis). Each stage has an evidence-backed checklist in `src/company/listed/checklists/` and automation scripts for financial calculations, screener scraping, and exchange announcement fetching. Start with `src/company/listed/WORKFLOW.md`.
 
 ### IPO Analysis
 Screen and analyze upcoming/recent IPOs using structured checklists (`src/company/ipo/checklists/`). Tools fetch IPO metadata from Chittorgarh and download RHP filings from SEBI.
@@ -45,7 +45,7 @@ analysis/
 │   ├── common/     # Shared utilities (PDF converter, valuation guide)
 │   ├── company/
 │   │   ├── ipo/    # IPO checklists and tools (fetch_rhp, ipo_client)
-│   │   └── listed/ # 8-pillar framework: checklists, workflow, and scripts
+│   │   └── listed/ # 4-stage framework: checklists, workflow, and scripts
 │   └── general/    # Top-down playbooks (themes, effects mapping)
 └── tmp/            # Generated outputs (gitignored)
 ```

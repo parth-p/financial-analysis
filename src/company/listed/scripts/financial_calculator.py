@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 financial_calculator.py — Deterministic Financial Analysis Engine
-Implements the quantitative and forensic framework of src/company/listed/checklists/5-financials.md.
+Implements the quantitative and forensic framework of src/company/listed/checklists/3-financials.md.
 
 Accepts structured financial time-series data via JSON on stdin (or file argument).
 Outputs verified GitHub-flavored Markdown tables, ratio decompositions, and forensic screens.
@@ -64,7 +64,7 @@ def fmt_pct(val: Optional[float], decimals: int = 2) -> str:
 
 
 class FinancialModel:
-    """Processes financial series and computes all metrics from 5-financials.md."""
+    """Processes financial series and computes all metrics from 3-financials.md."""
 
     def __init__(self, data: Dict[str, Any]):
         self.data = data
@@ -873,7 +873,7 @@ def get_template_json() -> Dict[str, Any]:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Deterministic Financial Analysis Engine for src/company/listed/checklists/5-financials.md"
+        description="Deterministic Financial Analysis Engine for src/company/listed/checklists/3-financials.md"
     )
     parser.add_argument("file", nargs="?", type=str, help="Optional path to input JSON file. If omitted, reads from stdin.")
     parser.add_argument(
