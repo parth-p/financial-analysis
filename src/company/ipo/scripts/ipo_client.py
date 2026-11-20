@@ -136,7 +136,7 @@ class ChittorgarhClient:
 
     def fetch_ipo_list(
         self,
-        board_type: str = "mainboard",
+        board_type: str = "both",
         year: int | None = None,
         month: int = 12,
         fy: str | None = None,
@@ -145,7 +145,7 @@ class ChittorgarhClient:
         """Fetch IPO listing for mainboard, sme, or both.
 
         Args:
-            board_type: "mainboard", "sme", or "both".
+            board_type: "mainboard", "sme", or "both" (default: "both").
             year: Calendar year (defaults to current year).
             month: Month integer (12 queries full financial year).
             fy: Financial year string (e.g., '2026-27'). Auto-calculated if None.
@@ -598,8 +598,8 @@ def main() -> None:
         "-b",
         "--board",
         choices=["mainboard", "sme", "both"],
-        default="mainboard",
-        help="Board type filter (default: mainboard).",
+        default="both",
+        help="Board type filter (default: both).",
     )
     list_parser.add_argument(
         "-y",
@@ -638,7 +638,34 @@ def main() -> None:
         help="Output raw JSON array instead of terminal table.",
     )
 
-    # 2. 'details' subcommand
+    # 2. 'search' subcommand
+    search_parser = subparsers.add_parser("search", help="Search IPOs by company name across boards.")
+    search_parser.add_argument(
+        "query",
+        type=str,
+        help="Company name search query (case-insensitive substring match).",
+    )
+    search_parser.add_argument(
+        "-b",
+        "--board",
+        choices=["mainboard", "sme", "both"],
+        default="both",
+        help="Board type filter (default: both).",
+    )
+    search_parser.add_argument(
+        "-y",
+        "--year",
+        type=int,
+        default=None,
+        help="Target calendar year (default: current year).",
+    )
+    search_parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Output raw JSON array instead of terminal table.",
+    )
+
+    # 3. 'details' subcommand
     details_parser = subparsers.add_parser("details", help="Fetch detailed specifications for an IPO.")
     details_parser.add_argument(
         "target",
@@ -706,6 +733,47 @@ def main() -> None:
                 print(f"\nTotal IPOs listed: {len(records)} (Displaying: {args.limit or len(records)})")
         except Exception as exc:
             logger.error("Failed to fetch IPO list: %s", exc)
+            sys.exit(1)
+
+    elif args.command == "search":
+        query = args.query.strip().lower()
+        now_year = datetime.datetime.now().year
+        target_year = args.year or now_year
+
+        try:
+            records = client.fetch_ipo_list(
+                board_type=args.board,
+                year=target_year,
+            )
+            matches = [r for r in records if query in r.get("company", "").lower()]
+
+            # Fallback: if no matches in current year and user didn't specify a year, search previous year
+            if not matches and args.year is None:
+                prev_records = client.fetch_ipo_list(
+                    board_type=args.board,
+                    year=now_year - 1,
+                )
+                prev_matches = [r for r in prev_records if query in r.get("company", "").lower()]
+                if prev_matches:
+                    matches = prev_matches
+                    target_year = now_year - 1
+
+            if args.json:
+                print(json.dumps(matches, indent=2, ensure_ascii=False))
+            else:
+                if not matches:
+                    print(f"No IPOs matching '{args.query}' found on board='{args.board}' for year {target_year}.")
+                    print("Tip: Try searching with a shorter keyword, specifying '--board both', or '--year <YYYY>'.")
+                else:
+                    print(f"Found {len(matches)} IPO(s) matching '{args.query}' (year {target_year}):\n")
+                    print(format_list_table(matches))
+                    print("\nRecommended next step (one-step ingest details + RHP markdown):")
+                    for m in matches:
+                        m_id = m.get("id")
+                        if m_id:
+                            print(f"  .venv/bin/python src/company/ipo/scripts/ipo_client.py details {m_id} --fetch-rhp --to-markdown")
+        except Exception as exc:
+            logger.error("Failed to search IPOs: %s", exc)
             sys.exit(1)
 
     elif args.command == "details":

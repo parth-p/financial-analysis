@@ -31,7 +31,7 @@ analysis/
 │   │   ├── ipo/             # IPO research
 │   │   │   ├── WORKFLOW.md              # ★ Master orchestrator: Quick Triage & Full Deep-Dive workflows
 │   │   │   ├── checklists/
-│   │   │   │   ├── full-ipo.md          # Comprehensive 9-section IPO deep-dive checklist
+│   │   │   │   ├── full-ipo.md          # Comprehensive 6-stage IPO deep-dive checklist
 │   │   │   │   └── quick-ipo.md         # Rapid triage checklist (decide: apply / pass / escalate)
 │   │   │   └── scripts/
 │   │   │       ├── fetch_rhp.py         # Download RHP/DRHP from SEBI/exchange URLs → tmp/company/ipo/
@@ -104,9 +104,8 @@ All scripts live in `src/` and must be executed via `.venv/bin/python`. Use `--h
 
 | Script | Purpose | CLI |
 |---|---|---|
-| `src/company/ipo/scripts/ipo_client.py` | List/search IPOs, fetch detailed metadata | `.venv/bin/python src/company/ipo/scripts/ipo_client.py list [--board mainboard\|sme\|both] [--year YYYY]` |
-| | | `.venv/bin/python src/company/ipo/scripts/ipo_client.py details <id_or_url> [--fetch-rhp] [--to-markdown]` |
-| `src/company/ipo/scripts/fetch_rhp.py` | Download RHP/DRHP from SEBI/exchange URLs | `.venv/bin/python src/company/ipo/scripts/fetch_rhp.py <url> [-c company_slug] [--to-markdown]` |
+| `src/company/ipo/scripts/ipo_client.py` | Search IPOs across boards, list issues, fetch metadata + RHP in one step | `.venv/bin/python src/company/ipo/scripts/ipo_client.py search "<name>" [--board both\|mainboard\|sme]`<br>`.venv/bin/python src/company/ipo/scripts/ipo_client.py list [--board both\|mainboard\|sme]`<br>`.venv/bin/python src/company/ipo/scripts/ipo_client.py details <id_or_url> --fetch-rhp --to-markdown` |
+| `src/company/ipo/scripts/fetch_rhp.py` | Download RHP/DRHP from SEBI/exchange URLs (fallback) | `.venv/bin/python src/company/ipo/scripts/fetch_rhp.py <url> [-c company_slug] [--to-markdown]` |
 
 ### Listed Equity Tools
 
@@ -143,8 +142,8 @@ All scripts live in `src/` and must be executed via `.venv/bin/python`. Use `--h
 ### IPO Analysis
 
 1. **Start with** `src/company/ipo/WORKFLOW.md` — master orchestrator containing execution rules, data ingestion commands, and prompts for both Mode 1 (Quick Review / Triage) and Mode 2 (Full Deep-Dive).
-2. **Find the IPO:** Use `ipo_client.py list` to search, or look up in `data/mainboard_ipos.csv` / `data/sme_ipos.csv`. Quick triage descriptions are in `data/ipo_descriptions.json`.
-3. **Pre-requisite ingestion:** Fetch metadata via `ipo_client.py details <id>` and download/convert RHP via `fetch_rhp.py <url> --to-markdown` into `tmp/company/ipo/<slug>/`.
+2. **Find the IPO:** Run `.venv/bin/python src/company/ipo/scripts/ipo_client.py search "<company name>"` to search across both mainboard and SME databases and get the exact ID.
+3. **Pre-requisite ingestion:** Run `.venv/bin/python src/company/ipo/scripts/ipo_client.py details <id> --fetch-rhp --to-markdown` to ingest metadata and convert RHP into `tmp/company/ipo/<slug>/rhp.md` in a single command. Never do ad-hoc web searches for RHP PDFs.
 4. **Analyze:** Follow `src/company/ipo/WORKFLOW.md` applying `checklists/quick-ipo.md` (Mode 1) or `checklists/full-ipo.md` (Mode 2). Base analysis strictly on RHP text.
 
 ### Thematic / Top-Down Research
