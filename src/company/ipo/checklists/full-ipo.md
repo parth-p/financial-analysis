@@ -377,7 +377,7 @@ The final deliverable in `tmp/company/ipo/<company-slug>/full-analysis.md` opens
   - **Quarantine Convenient Inclusions:** Explain why RHP peers are mismatched (e.g., comparing a contract manufacturer to high-multiple consumer brands, or an asset-heavy rental fleet to a circular pallet platform).
   - **Expose Convenient Omissions:** Identify direct operating competitors omitted from the RHP peer set because they trade at lower valuation multiples.
 - [ ] **6.2 Deterministic True Peer Matrix (ROIC-Adjusted):**
-  - Assemble 3 to 5 true operating peers using the `peer-finder.md` runbook:
+  - Assemble 3 to 5 true operating peers using the `src/company/adhoc/peer-finder.md` runbook:
   | Company Name | Business / Economic Match | Market Cap (₹ Cr) | P/E Ratio (TTM / FY) | EV/EBITDA | ROCE (%) | Operating EBITDA Margin (%) | Debtor Days | 3-Yr CFO / PAT (%) |
   |---|---|---|---|---|---|---|---|---|
   | **Target IPO (at Cap Price)** | **Subject Company** | | | | | | | |

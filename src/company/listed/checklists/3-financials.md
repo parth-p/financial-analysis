@@ -293,7 +293,7 @@ When you encounter a fact that requires testing or decision-making in subsequent
 *Assemble true comparable peers using the peer-finder runbook, not generic portal presets.*
 
 - [ ] **Assemble True Comparable Peers:**
-  - Execute `src/company/listed/peer-finder.md` to identify 3 to 5 true business model peers across the 5-tier taxonomy, business model archetype, customer concentration, and market cap tier.
+  - Execute `src/company/adhoc/peer-finder.md` to identify 3 to 5 true business model peers across the 5-tier taxonomy, business model archetype, customer concentration, and market cap tier.
 - [ ] **The Peer Valuation Matrix (Adjusted for Returns on Capital):**
   | Company Name | Market Cap (₹ Cr) | Primary Multiple (EV/EBITDA or P/E) | 3-Yr Revenue CAGR (%) | Operating ROIC (%) | Net Debt / EBITDA | Quality / Valuation Verdict |
   |---|---|---|---|---|---|---|

@@ -37,9 +37,11 @@ analysis/
 │   │   │       ├── fetch_rhp.py         # Download RHP/DRHP from SEBI/exchange URLs → tmp/company/ipo/
 │   │   │       └── ipo_client.py        # Chittorgarh API client: list IPOs, fetch details, trigger RHP download
 │   │   │
+│   │   ├── adhoc/           # Ad-hoc & modular company playbooks (shared by listed & IPO)
+│   │   │   └── peer-finder.md           # Deterministic peer-selection runbook for relative valuation
+│   │   │
 │   │   └── listed/          # Listed equity research (4-stage framework)
 │   │       ├── WORKFLOW.md              # ★ Master orchestrator: execution rules, sources & stage prompts
-│   │       ├── peer-finder.md           # Deterministic peer-selection runbook for relative valuation
 │   │       ├── checklists/              # The 4 analytical stages (execute in order)
 │   │       │   ├── 1-business.md            # Stage 1: Business model, industry arena & moat falsification
 │   │       │   ├── 2-management.md          # Stage 2: Management competence, capital allocation & governance
@@ -154,7 +156,7 @@ All scripts live in `src/` and must be executed via `.venv/bin/python`. Use `--h
 
 ### Peer Selection
 
-Run `src/company/listed/peer-finder.md` — deterministic procedure for assembling comparable-company sets for relative valuation.
+Run `src/company/adhoc/peer-finder.md` — deterministic procedure for assembling comparable-company sets for relative valuation.
 
 ---
 

@@ -175,7 +175,7 @@ Execution instructions:
    # Fill input JSON from screener.md / annual report, then run:
    .venv/bin/python src/company/listed/scripts/financial_calculator.py <input.json> --wacc 13 -o tmp/company/listed/<company-slug>/financial-calc-output.md
    ```
-2. **Peer Finder:** Consult `src/company/listed/peer-finder.md` to select true operating peers.
+2. **Peer Finder:** Consult `src/company/adhoc/peer-finder.md` to select true operating peers.
 3. **Valuation Calculator:** Run multiples, inversion, and sensitivity:
    ```bash
    .venv/bin/python src/company/listed/scripts/valuation_calculator.py --template
