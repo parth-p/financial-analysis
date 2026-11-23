@@ -38,6 +38,8 @@ analysis/
 │   │   │       └── ipo_client.py        # Chittorgarh API client: list IPOs, fetch details, trigger RHP download
 │   │   │
 │   │   ├── adhoc/           # Ad-hoc & modular company playbooks (shared by listed & IPO)
+│   │   │   ├── concall-analysis.md      # Quarterly results, concall & PPT diagnostic (numbers, footnotes, Q&A)
+│   │   │   ├── headwind-tailwind.md     # Force-field diagnostic: 4-D vectors, transmission, and net vector
 │   │   │   └── peer-finder.md           # Deterministic peer-selection runbook for relative valuation
 │   │   │
 │   │   └── listed/          # Listed equity research (4-stage framework)
@@ -55,8 +57,10 @@ analysis/
 │   │           └── nse_announcements.py     # Fetch NSE announcements (orders, filings, PDFs)
 │   │
 │   └── general/             # Top-down / thematic research playbooks
-│       ├── theme-discovery.md           # Scout & rank 10–20 investment themes across time horizons
+│       ├── industry-analysis.md         # Deep-dive industry arena diagnostic (supply, capital cycle, value chain)
+│       ├── market-digest.md             # Pre-market daily deltas and weekly market synthesis
 │       ├── order-of-effects.md          # Map multi-order causal effects of a theme (no tickers until Phase 6)
+│       ├── theme-discovery.md           # Scout & rank 10–20 investment themes across time horizons
 │       └── theme-to-companies.md        # Theme → all NSE/BSE-listed companies with exposure tiers
 │
 └── tmp/                     # Ephemeral output (GITIGNORED — never commit)
@@ -148,15 +152,19 @@ All scripts live in `src/` and must be executed via `.venv/bin/python`. Use `--h
 3. **Pre-requisite ingestion:** Run `.venv/bin/python src/company/ipo/scripts/ipo_client.py details <id> --fetch-rhp --to-markdown` to ingest metadata and convert RHP into `tmp/company/ipo/<slug>/rhp.md` in a single command. Never do ad-hoc web searches for RHP PDFs.
 4. **Analyze:** Follow `src/company/ipo/WORKFLOW.md` applying `checklists/quick-ipo.md` (Mode 1) or `checklists/full-ipo.md` (Mode 2). Base analysis strictly on RHP text.
 
-### Thematic / Top-Down Research
+### Thematic & Industry Top-Down Research
 
+- **Industry & Sector Diagnostic:** Run `src/general/industry-analysis.md` — deep-dive diagnostic of an Indian industry arena (supply/capacity pipeline, end-market matrix, capital cycle phase, trade/China dumping risk, and 10-year ROCE). Outputs to `tmp/general/industry/<industry-slug>.md`.
 - **Discover themes:** Run `src/general/theme-discovery.md` — scouts and ranks 10–20 themes.
 - **Map theme → companies:** Run `src/general/theme-to-companies.md` — finds all NSE/BSE-listed companies exposed to a theme with 3-tier exposure classification. Use `data/indian_market_taxonomy_5_tier.md` as the sector reference.
 - **Multi-order effects:** Run `src/general/order-of-effects.md` — maps causal chains (no tickers until Phase 6).
+- **Daily / Weekly Digest:** Run `src/general/market-digest.md` — pre-market daily deltas and weekly synthesis.
 
-### Peer Selection
+### Ad-Hoc & Modular Analysis
 
-Run `src/company/adhoc/peer-finder.md` — deterministic procedure for assembling comparable-company sets for relative valuation.
+- **Quarterly Results & Concall Diagnostic:** Run `src/company/adhoc/concall-analysis.md` — institutional diagnostic of quarterly/annual financial results (Regulation 33), concall transcripts, and investor presentations. Covers core operating numbers, footnote forensics, segmental health, operational radar, Q&A evasions, forward commitments register, and balance sheet checks (Q2/Q4).
+- **Headwind / Tailwind & Catalyst Diagnostic:** Run `src/company/adhoc/headwind-tailwind.md` — force-field diagnostic mapping 4-D vectors (locus, horizon, transmission, pricing), leverage multipliers, subsidy cliffs, and net vector synthesis. Polymorphic for companies, industries, or sectors.
+- **Peer Selection:** Run `src/company/adhoc/peer-finder.md` — deterministic procedure for assembling comparable-company sets for relative valuation.
 
 ---
 

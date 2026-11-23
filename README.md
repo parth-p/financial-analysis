@@ -25,6 +25,15 @@ Structured analysis across 4 stages — Stage 1 (Business Model, Arena & Moat), 
 ### IPO Analysis
 Screen and analyze upcoming/recent IPOs using structured checklists (`src/company/ipo/checklists/`). Tools fetch IPO metadata from Chittorgarh and download RHP filings from SEBI.
 
+### Industry & Sector Analysis
+Deep-dive diagnostic of an Indian industry arena across supply/capacity pipeline, end-market customer matrix, capital cycle phase, Chinese dumping risk, and 10-year ROCE benchmarks using `src/general/industry-analysis.md`.
+
+### Headwind / Tailwind & Catalyst Diagnostic
+Institutional force-field diagnostic mapping 4-D vectors (locus, horizon, financial transmission line, and consensus pricing), operating leverage multipliers, subsidy fragility, and net vector synthesis for any company, industry, or sector using `src/company/adhoc/headwind-tailwind.md`.
+
+### Quarterly Results & Concall Diagnostic
+Dissect quarterly and annual financial filings (SEBI Regulation 33), concall transcripts, and investor presentations. Audits clean operating numbers (ex-other income), footnote forensics, segmental mix shifts, operational radar, concall Q&A evasions, and forward commitments using `src/company/adhoc/concall-analysis.md`.
+
 ### Theme Discovery
 Scout, research, and rank investment themes across multiple time horizons using `src/general/theme-discovery.md`.
 
